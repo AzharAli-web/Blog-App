@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-900: #1e3a8a;
+
+  --color-dark-bg: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-dark-border: #334155;
+
+  --color-light-bg: #f8fafc;
+  --color-light-surface: #ffffff;
+  --color-light-border: #e2e8f0;
+
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-main-dark: #f8fafc;
+  --color-text-muted-dark: #94a3b8;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --background: var(--color-light-bg);
+    --foreground: var(--color-text-main);
+    --surface: var(--color-light-surface);
+    --border: var(--color-light-border);
+    --muted: var(--color-text-muted);
+  }
+
+  .dark {
+    --background: var(--color-dark-bg);
+    --foreground: var(--color-text-main-dark);
+    --surface: var(--color-dark-surface);
+    --border: var(--color-dark-border);
+    --muted: var(--color-text-muted-dark);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/*
+  Tailwind v4: Map CSS variable tokens to utility classes.
+  Without this @theme inline block, classes like bg-background /
+  text-foreground / bg-surface / text-muted produce NO output.
+*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .glass-nav {
+    background: rgba(15, 23, 42, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hide scrollbar but keep scroll functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* React Quill Styles — dark mode overrides */
+.dark .ql-toolbar {
+  background: var(--surface);
+  border-color: var(--border) !important;
+}
+.dark .ql-toolbar button {
+  color: var(--foreground) !important;
+}
+.dark .ql-toolbar .ql-stroke {
+  stroke: var(--foreground) !important;
+}
+.dark .ql-toolbar .ql-fill {
+  fill: var(--foreground) !important;
+}
+.dark .ql-container {
+  border-color: var(--border) !important;
+}
+.dark .ql-editor {
+  color: var(--foreground);
+}
