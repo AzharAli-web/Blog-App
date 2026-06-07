@@ -132,18 +132,42 @@ Blog-App/
 
 ## 📸 Screenshots
 
+
 🏠 Home Page
-<img src="./public/home.png" width="48%" style="border-radius:20px;" />
+<p align="center">
+  <img src="./public/home.png" width="48%" style="border-radius:10%;"/>
+</p>
+
+
 📰 Article Page
-<img src="./public/article.png" width="48%" style="border-radius:20px;" />
+<p align="center">
+  <img src="./public/article.png" width="50%" style="border-radius:10%;"/>
+</p>
+
+
 📄 Single Post Page
-<img src="./public/single.png" width="48%" style="border-radius:20px;" />
+<p align="center">
+  <img src="./public/single.png" width="50%" style="border-radius:10%;"/>
+</p>
+
+
 🧑 About Page
-<img src="./public/about.png" width="48%" style="border-radius:20px;" />
+<p align="center">
+  <img src="./public/about.png" width="50%" style="border-radius:10%;"/>
+</p>
+
+
 📬 Contact Page
-<img src="./public/contact.png" width="48%" style="border-radius:20px;" />
+<p align="center">
+  <img src="./public/contact.png" width="50%" style="border-radius:10%;" />
+</p>
+
+
 🛠️ Admin Dashboard
-<img src="./public/admin.png" width="48%" style="border-radius:20px;" />
+<p align="center">
+  <img src="./public/admin.png" width="50%" style="border-radius:10%;"/>
+</p>
+
 ---
 
 ## ⚡ Performance & UX Features
